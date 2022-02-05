@@ -34,7 +34,7 @@ variable "service_runtime_subnet_id" {
   default     = ""
 }
 
-variable "var.application_insights_connection_string" {
+variable "application_insights_connection_string" {
   type        = string
   description = "application insights connection string"
   default     = ""

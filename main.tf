@@ -51,9 +51,16 @@ module "asc" {
 }
 
 module "apim" {
-  source                                 = "./modules/apim"
-  apim_service_name                        = "apim-ng27318712357356187"
-  location                               = module.resource.azurerm_resource_group_ng_location
-  resource_group_name                    = module.resource.azurerm_resource_group_ng_name
+  source                                  = "./modules/apim"
+  apim_service_name                       = "apim-ng27318712357356187"
+  location                                = module.resource.azurerm_resource_group_ng_location
+  resource_group_name                     = module.resource.azurerm_resource_group_ng_name
   application_insights_instumentation_key = module.insight.application_insights_instumentation_key
+}
+
+module "asb" {
+  source              = "./modules/asb"
+  asb_service_name     = "asb-ng27318712357356187"
+  location            = module.resource.azurerm_resource_group_ng_location
+  resource_group_name = module.resource.azurerm_resource_group_ng_name
 }

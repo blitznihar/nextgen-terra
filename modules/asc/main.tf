@@ -17,7 +17,7 @@ resource "azurerm_spring_cloud_service" "sc" {
   }
 
   trace {
-    connection_string = var.application_insights
+    connection_string = var.application_insights_connection_string
     sample_rate       = 10.0
   }
 

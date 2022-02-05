@@ -7,17 +7,6 @@ resource "azurerm_api_management" "azurerm_api_management_ng" {
 
   sku_name = "Developer_1"
 
-  config_server_git_setting {
-    uri          = "https://github.com/blitznihar/apimnextgenconfig"
-    label        = "config"
-    search_paths = ["dir1", "dir2"]
-  }
-
-  trace {
-    connection_string = var.application_insights
-    sample_rate       = 10.0
-  }
-
 
 }
 
@@ -54,7 +43,7 @@ resource "azurerm_api_management_logger" "azurerm_api_management_logger_ng" {
   resource_group_name = var.resource_group_name
 
   application_insights {
-    instrumentation_key = azurerm_application_insights.azurerm_application_insights_ng.instrumentation_key
+    instrumentation_key = var.application_insights_instumentation_key
   }
 }
 
